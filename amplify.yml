@@ -7,7 +7,7 @@ frontend:
         - yarn build 
   artifacts:
     # IMPORTANT - Please verify your build output directory
-    baseDirectory: /public
+    baseDirectory: public
     files:
       - '**/*'
   cache:
