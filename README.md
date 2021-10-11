@@ -16,8 +16,6 @@ The input JSON document containing a list of sheep:
     { "name": "bo peet", "available": false }
   ]
   - if not available then the sheep is missing
-
-
 ## Output
 
 <img src="./cs-ui.png" width="500" >
@@ -25,13 +23,11 @@ The input JSON document containing a list of sheep:
 6. Solution:
 
   a. Create the CountSheep function using Javascript. It takes as input an array of JSON sheep  objects and returns the results. Create test cases. Use Yup for validation.
-  b. First validate the json. return errors if json is invalid.
-  c. Tally up the results. 
-  d. return JSON results.
-  e. Display results to user.
+  b. The JSON is validated using Javascript's JSON.parse() method. If this method returns false the json is assumed not to be valid and the results are set to zero.
+  c. Tally up the results: A simple calculation based on the inputs. A sheep is missing if the 'available' field is false. 
+  e. Display results to user: There is a react component that is "listening" to a change in state from the validation function. When that happens the results are displayed below the form.
   f. Since we're building a website that requires hosting, I'll use AWS amplify for hosting since it's an easy solution. Also, I'll be useing ReactJS for all javascript code.
 
 
-Create an amplify project that includes hosting. 
 
 
