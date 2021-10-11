@@ -4,6 +4,7 @@
 import React from 'react';
 import { Button, TextareaAutosize } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
+import PropTypes from "prop-types"
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -21,7 +22,7 @@ const useStyles = makeStyles(theme => ({
 
 const SheepInputForm = ({ ...props }) => {
   const classes = useStyles();
-  const [sheepJson, setSheepJson] = React.useState([]);
+  const [sheepJson, setSheepJson] = React.useState(JSON.stringify(props.defaults));
 
   /** Parse the json then return the results **/
   function validate(json) {
@@ -80,7 +81,7 @@ const SheepInputForm = ({ ...props }) => {
                         rows = {5}
                         className="mb-3 form-control"
                         placeholder= '[ {"name": "ba ba", "available": true}, {"name": "sheep2", "available": false}]'
-                        defaultValue = {""}
+                        defaultValue={sheepJson}
                         required
                         onChange = { event => {
                           const { value } = event.target;
@@ -111,7 +112,8 @@ const SheepInputForm = ({ ...props }) => {
 export default SheepInputForm;
 
 SheepInputForm.propTypes = {
-
+  defaults: PropTypes.any,
+  giveResults: PropTypes.func,
 };
 
 
