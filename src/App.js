@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import React from 'react'
+import SheepInputForm from './components/SheepInputForm'
+import SheepResults from './components/SheepResults'
+import Grid from '@material-ui/core/Grid'
 import './App.css';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'
+
+// [
+//   { "name": "ba ba", "available": true },
+//   { "name": "bo peet", "available": false },
+//   { "name": "bo peet", "available": false }
+// ]
 
 function App() {
+  const [sheeps, setSheeps] = React.useState([]);
+
+  function handleResults(sheeps) {
+    setSheeps(sheeps);
+  }
+
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload1.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Sheep Input App</h1>
+      <Grid  container-fluid>
+        <Grid item xs={6} md={6} >
+          <SheepInputForm giveResults={handleResults}/>
+        </Grid>
+        <hr/>
+        <Grid item xs={6} md={6} >
+          <SheepResults sheepResults={sheeps} />
+        </Grid>
+      </Grid>
     </div>
   );
 }
