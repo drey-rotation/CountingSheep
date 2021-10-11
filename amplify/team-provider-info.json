@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-countsheep-dev-64008-authRole",
+            "UnauthRoleArn": "arn:aws:iam::180959867549:role/amplify-countsheep-dev-64008-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::180959867549:role/amplify-countsheep-dev-64008-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-countsheep-dev-64008-deployment",
+            "UnauthRoleName": "amplify-countsheep-dev-64008-unauthRole",
+            "StackName": "amplify-countsheep-dev-64008",
+            "StackId": "arn:aws:cloudformation:us-west-2:180959867549:stack/amplify-countsheep-dev-64008/c1d01d40-2a98-11ec-8ea4-0a1df7541ad1",
+            "AmplifyAppId": "d3jzw95ngp4p3x"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d3jzw95ngp4p3x",
+                    "type": "cicd"
+                }
+            }
+        }
+    }
+}
