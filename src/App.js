@@ -3,7 +3,7 @@ import SheepInputForm from './components/SheepInputForm'
 import SheepResults from './components/SheepResults'
 import Grid from '@material-ui/core/Grid'
 import './App.css';
-import 'mdb-react-ui-kit/dist/css/mdb.min.css'
+// import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
 // [
 //   { "name": "ba ba", "available": true },

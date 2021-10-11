@@ -3,16 +3,18 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm install 
-        - nvm use
-        - npm install
-        - npm ci
+        # - nvm install 
+        # - nvm use
+        # - npm install
+        # - npm ci
+        - yarn install 
+
         # - amplifyPush  --simple
         # - amplifyPush -e $AWS_BRANCH --simple
     # IMPORTANT - Please verify your build commands
     build:
       commands: 
-        - npm run build --verbose
+        - yarn build --verbose
   artifacts:
     # IMPORTANT - Please verify your build output directory
     baseDirectory: /build
