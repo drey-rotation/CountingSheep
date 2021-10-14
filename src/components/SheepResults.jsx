@@ -2,6 +2,7 @@
  * Sheep results
  */
 import React from 'react';
+import Grid from '@material-ui/core/Grid'
 
 const SheepResults = ({ ...props }) => {
   console.log("results  props: ", props);
@@ -11,17 +12,20 @@ const SheepResults = ({ ...props }) => {
   return (
 
     <>
-      <p>
-        <h2>These are the results:</h2>
-      </p>
+      <Grid container >
+        <Grid item p={2} pl={20} xs={12} >
+          <p>
+            <h2>These are the results:</h2>
+          </p>
 
-      {/* {sheepResults.map( (sheep, idx) => (
-        <div>the sheep</div>
-      ))} */}
-      <p>There are a total of: {sheepResults.total} sheep.</p>
-      <p>{sheepResults.available} sheep are available.</p>
-      <p>{sheepResults.missing} sheep are missing.</p>
-
+          {/* {sheepResults.map( (sheep, idx) => (
+            <div>the sheep</div>
+          ))} */}
+          <p>There are a total of: {sheepResults.total} sheep.</p>
+          <p>{sheepResults.available} sheep are available.</p>
+          <p>{sheepResults.missing} sheep are missing.</p>
+        </Grid>
+      </Grid>
     </>
 
   );

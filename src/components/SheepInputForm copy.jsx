@@ -3,7 +3,6 @@
  */
 import React from 'react';
 import { Button, TextareaAutosize } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid'
 import { makeStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types"
 
@@ -46,6 +45,13 @@ const SheepInputForm = ({ ...props }) => {
     props.giveResults(outputResults);
   }
 
+  // const validInput = [ 
+  //   { name: "ba ba", available: true },
+  //   { name: "bo peet", available: false },
+  //   { name: "bo peet", available: false }
+  // ]
+  // const displayedInput = JSON.stringify(validInput);
+
   return (
     <>
       <form
@@ -53,8 +59,8 @@ const SheepInputForm = ({ ...props }) => {
         method="post"
         name="myForm"
       >
-        <Grid container spacing={2}>
-          <Grid item xs={12} >
+        <div className="row ">
+          <div className="col-lg-12">
             <div className="mb-5">
               <h3 align="left"  className="title mb-3">Enter a valid JSON document in the textfield below:</h3>
               <p align="left" className=" text-align-left text-muted font-size-15">
@@ -63,37 +69,38 @@ const SheepInputForm = ({ ...props }) => {
               </p>
               
             </div>
-          </Grid>
- 
-          <Grid item xs={12} >
-                  < TextareaAutosize
-                    style = {{ width: '100%', fontsize: '30' }}
-                    InputProps={{ classes: { input: classes.resize } }}
-                    name = "message"
-                    minRows={5}
-                    className="mb-3 form-control"
-                    placeholder= '[ {"name": "ba ba", "available": true}, {"name": "sheep2", "available": false}]'
-                    defaultValue={sheepJson}
-                    required
-                    onChange = { event => {
-                      const { value } = event.target;
-                      setSheepJson(value);
-                    }}
-              />         
-             
-          </Grid>
+          </div>
+        </div>
 
-          <Grid item xs={12} >
-            <Button className="btn btn-soft-primary"
-              type="submit"
-              fullwidth
-              variant="contained"
-              color="secondary">
-              Send
-            </Button>
-          </Grid>
+        <div className="row align-items-center">
+          <div className="col-lg-12">
+                      < TextareaAutosize
+                        style = {{ width: '100%', fontsize: '30' }}
+                        InputProps={{ classes: { input: classes.resize } }}
+                        name = "message"
+                        rows = {5}
+                        className="mb-3 form-control"
+                        placeholder= '[ {"name": "ba ba", "available": true}, {"name": "sheep2", "available": false}]'
+                        defaultValue={sheepJson}
+                        required
+                        onChange = { event => {
+                          const { value } = event.target;
+                          setSheepJson(value);
+                        }}
+                  />
+          
+          </div>
+        </div>
 
-        </Grid>
+        <Button className="btn btn-soft-primary"
+          type="submit"
+          fullwidth
+          variant="contained"
+          color="secondary">
+          Send
+        </Button>
+
+
 
 </form>
 
